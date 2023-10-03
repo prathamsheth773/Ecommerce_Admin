@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input,textarea {
+  @apply border-2 border-gray-400 rounded-md px-1 w-full;
+  @apply mb-2;
+}
+input:focus,
+textarea:focus {
+  @apply border-blue-900;
+}
+img{
+  max-height:100%;
+}
+h1 {
+  @apply text-blue-900 mb-2 text-2xl font-bold;
+}
+lable {
+  @apply text-blue-900;
+}
+.btn-primary {
+    @apply bg-blue-900 text-white px-4 py-1 rounded-md
+}
+table.basic{
+  @apply w-full mb-9;
+}
+table.basic tr td{
+  @apply border p-1 border-green-900;
+}
+table.basic thead tr td{
+  @apply bg-black text-white font-bold;
+}
+table.basic a{
+  @apply bg-green-300 text-green-900 text-sm py-1 px-2 rounded-md inline-flex gap-1 font-bold justify-center mr-2;
+}
+table.basic a.delete_btn{
+  @apply bg-red-300 text-red-900 text-sm py-1 px-3 rounded-md inline-flex gap-1 font-bold mr-2;
+}
+.btn-red{
+  @apply bg-red-800 text-white
+}
+.btn-default{
+  @apply bg-gray-500 text-white;
+}
+.btn-default, .btn-red{
+  @apply px-4 py-1 rounded-md
+}
