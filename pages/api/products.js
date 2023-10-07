@@ -6,6 +6,7 @@ export default async function handle(req, res){
     // res.json(req.method);
     const {method} = req;
     await mongooseConnect();
+    await isAdminRequest(req,res)
     if(method === 'GET')
     {
         if(req.query?.id){
