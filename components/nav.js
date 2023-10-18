@@ -1,10 +1,10 @@
 import { signOut } from "next-auth/react";
-import Image from "next/image"
 import Link from "next/link";
 import { useRouter } from "next/router";
-export default function Nav() {
-    const inactiveLink = 'flex gap-1 p-2 ';
-    const activeLink = inactiveLink + ' bg-white   text-blue-900 rounded-l-lg ';
+import Logo from "./logo";
+export default function Nav({show}) {
+    const inactiveLink = 'flex gap-1 p-1 m-2';
+    const activeLink = inactiveLink + ' bg-primary text-white rounded-lg ';
     const router = useRouter();
     const { pathname } = router;
     async function logout(){
@@ -12,10 +12,10 @@ export default function Nav() {
         await signOut();
     }
     return (
-        <aside className="text-white p-4 pr-0">
-            <a className="flex">
-                <Image src="/Gizmo.png" alt="The Gizmo" width="100" height="50"></Image>
-            </a>
+        <aside className={(show?'left-0':'-left-full') +" top-0 text-gray-500 p-4 fixed  bg-gray-200 w-full h-full md:static md:w-auto transition-all "}>
+            <div className="mb-4 mr-4">
+            <Logo/>
+            </div>
             <nav className="flex flex-col gap-2">
                 <Link href={'/'} className={pathname === '/' ? activeLink : inactiveLink}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

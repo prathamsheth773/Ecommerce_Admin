@@ -2,8 +2,8 @@ import multiparty from 'multiparty';
 import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3'; '@aws-sdk/client-s3';
 import fs from 'fs';//file system library
 import mime from 'mime-types';
-import mongoose from 'mongoose';
 import { mongooseConnect } from '@/lib/mongoose';
+import { isAdminRequest } from './auth/[...nextauth]';
 const bucketName = 'the-gizmo';
 
 export default async function handle(req, res) {

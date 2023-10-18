@@ -128,7 +128,7 @@ function Categories({ swal }) {
                     <label className="block font-bold">Properties</label>
                     <button
                         onClick={addProperty}
-                        className="btn-default mb-3"
+                        className="btn-primary mb-3"
                         type="button">
                         Add new Property
                     </button>
@@ -151,7 +151,7 @@ function Categories({ swal }) {
                             <button 
                             onClick={() => removeProperty(index)}
                             type="button"
-                            className="btn-default">
+                            className="bg-red-300 text-red-900 text-sm px-3 rounded-md font-bold">
                                 Remove
                             </button>
 
@@ -168,12 +168,12 @@ function Categories({ swal }) {
                                 setParentCategory('')
                                 setProperties([]);
                             }}
-                            className="btn-default">Cancel
+                            className="btn-primary">Cancel
                         </button>
                     )}
                     <button 
                         type="submit" 
-                        className="btn-primary py-1">
+                        className="btn-default">
                         Save
                     </button>
                 </div>
